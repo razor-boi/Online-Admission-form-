@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Admission Form</title>
+  <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>College Admission Form</h2>
+  <form id="form"  action="/submit-form" method="POST" enctype="multipart/form-data">
+
+     <label for="roll_number">Roll Number</label>
+    <input type="number" name="roll_number" id="roll_number" placeholder="Enter roll number if assingned" />
+
+    <label for="university_roll">University Roll Number </label>
+<input type="number" name="university_roll" id="university_roll" placeholder="Enter university roll number if assingned" />
+
+  <label for="university_reg">University Registration Number</label>
+<input type="number" name="university_reg" id="university_reg" />
+
+<label for="course">*Select Course</label>
+<select name="course" id="course" required>
+  <option value="">-- Select Course --</option>
+  <option value="ba">BA</option>
+  <option value="bcom">BCom</option>
+  <option value="bsc">BSc</option>
+  <option value="msc">MSc</option>
+  <option value="bca">BCA</option>
+  <option value="bba">BBA</option>
+  <option value="pgdca">PGDCA</option>
+</select>
+    <!-- Student Information -->
+
+    <h2>Personal Information</h2>
+    <h4 style="color:red;">Field with ( * ) this sign are required</h4>
+    
+    <label for="student_name">*Full Name of the Student</label>
+    <input type="text" name="student_name" id="student_name" required />
+
+    <label for="father_name">*Father's Name</label>
+<input type="text" name="father_name" id="father_name" required />
+
+<!-- Mother's Name -->
+<label for="mother_name">*Mother's Name</label>
+<input type="text" name="mother_name" id="mother_name" required />
+
+<!-- Student Phone Number -->
+<label for="student_phone">*Phone Number</label>
+<input type="tel" name="student_phone" id="student_phone" pattern="[0-9]{10}" maxlength="10" required />
+
+
+    <label for="dob">*Date of Birth</label>
+    <input type="date" name="dob" id="dob" required />
+
+    <label for="email">*Email</label>
+    <input type="email" name="email" id="email" required />
+
+    <label for="aadhaar">*Aadhaar Card Number</label>
+    <input type="text" name="aadhaar" id="aadhaar" pattern="\d{12}" maxlength="12" required />
+
+    <label for="blood_group">Blood Group</label>
+    <input type="text" name="blood_group" id="blood_group"/>
+
+    <label for="category">*Category (GEN/SC/ST/OBC)</label>
+    <select name="category" id="category" required>
+      <option value="">--Select Category--</option>
+      <option value="GEN">GEN</option>
+      <option value="SC">SC</option>
+      <option value="ST">ST</option>
+      <option value="OBC">OBC</option>
+    </select>
+
+    <label for="sub_category">Sub-Category</label>
+<select name="sub_category" id="sub_category">
+  <option value="">-- Optional --</option>
+  <option value="irdp">IRDP</option>
+  <option value="bpl">BPL</option>
+</select>
+
+    <!-- Uploads -->
+    <label for="passport_photo">*Upload Passport Size Photo</label>
+    <input type="file" name="passport_photo" id="passport_photo" accept="image/*" onchange="previewphoto(event , 'studentPreview')" required />
+    <br>
+    <img id="studentPreview" style="display:none; width:140px; height:150px; margin-top:5px; border:.0625rem solid #000;" src="" alt="">
+
+    <label for="signature_photo">*Upload Signature Photo</label>
+    <input type="file" name="signature_photo" id="signature_photo" accept="image/*" onchange="previewphoto(event,'signaturePreview')" required />
+     <img id="signaturePreview" style="display:none; width:140px; height:150px; margin-top:5px; border:.0625rem solid #000;" src="" alt="">
+
+    <!-- Addresses -->
+    <label for="correspondence_address">*Correspondence Address</label>
+    <textarea name="correspondence_address" id="correspondence_address" rows="3" required></textarea>
+
+    <label for="permanent_address">*Permanent Address</label>
+    <textarea name="permanent_address" id="permanent_address" rows="3" required></textarea>
+
+    <!-- Bank Details -->
+    <h3>Bank Account Details</h3>
+    <label for="bank_name">*Bank Name</label>
+    <input type="text" name="bank_name" id="bank_name" required />
+
+    <label for="account_no">*Bank Account Number</label>
+    <input type="number" name="account_no" id="account_no" required />
+
+    <label for="ifsc">*IFSC Code</label>
+    <input type="text" name="ifsc" id="ifsc" required />
+
+    <label>*Choose Your Subjects</label>
+    <div id="subject-container">
+      <div class="custom-multiselect">
+        <div class="select-box" onclick="toggledropdown()">
+          <span class="selected">Select Subjects</span>
+          <div class="arrow">&#9662;</div>
+        </div>
+        <div class="checkbox-list" id="checkboxList"></div>
+          <input type="hidden" id="selectedSubjects" name="selectedSubjects">
+      </div>
+    </div>
+<!-- 10th Class -->
+<h2>Academic Information</h2>
+
+<!-- 10th Class -->
+<h3><center>Matriculation</center></h3>
+<label for="tenth_year">*10th Year of Passing</label>
+<input type="number" name="matriculation_year" id="10_Year" required>
+
+<label for="tenth_marks">*Roll No.</label>
+<input type="number" name="matriculation_roll_no" id="10_Rollno" required>
+
+<label for="tenth_marks">*Division</label>
+<input type="text" name="matriculation_division" id="10_Division" required>
+
+<label for="tenth_marks">*10th Class Marks Obtained/SGPA</label>
+<input type="number" name="matriculation_sgpa" id="10_SGPA" required>
+
+<label for="tenth_percentage">*% of Marks/CGPA</label>
+<input type="number" name="matriculation_cgpa" id="10_CGPA"  required>
+
+<label for="tenth_board"> *Board Name</label>
+<input type="text" name="matriculation_board" id="10_Board" required>
+
+<label for="tenth_board">*Subject Offered</label>
+<input type="text" name="matriculation_subjects" id="Subject_10" required>
+
+
+<!-- 12th Class -->
+
+<h3><center>10+2</center></h3>
+<label for="twelfth_year">*12th Year of Passing</label>
+<input type="number" name="twelfth_year" id="12_Year" required>
+
+<label for="twelfth_marks">*Roll No.</label>
+<input type="number" name="twelfth_roll_no" id="12_Rollno" required>
+
+<label for="twelfth_marks">*Division</label>
+<input type="text" name="twelfth_division" id="12_Division" required>
+
+<label for="twelfth_marks">*12th Class Marks Obtained/SGPA</label>
+<input type="number" name="twelfth_sgpa" id="12_SGPA" required>
+
+<label for="twelfth_percentage">*% of Marks/CGPA</label>
+<input type="number" name="twelfth_cgpa" id="12_CGPA"  required>
+
+<label for="twelfth_board">*Board Name</label>
+<input type="text" name="twelfth_board" id="12_Board" required>
+
+<label for="twelfth_board">*Subject Offered</label>
+<input type="text" name="twelfth_subjects" id="Subject_12" required>
+
+<!-- UG Info (Only for PG Admissions) -->
+<h3><center>College Admission</center></h3>
+<h3><center>Year/Semester - 1</center></h3>
+<label for="first_year">Year of Passing - ( BA/Bcom/BSc Year-1 , MA/Msc/BCA/BBA/PGDCA Sem-1 )</label>
+<input type="number" name="graduation_year" class="semester-input" id="ba_bcom_bsc" placeholder="New Students can leave this field empty" >
+
+<label for="first_roll">Roll No.</label>
+<input type="number" name="graduation_roll_no" class="semester-input" id="1_Roll_No" placeholder="New Students can leave this field empty">
+
+<label for="first_division">Division</label>
+<input type="text" name="graduation_division" class="semester-input" id="_Division" placeholder="New Students can leave this field empty" >
+
+<label for="first_marks">Class Marks Obtained/SGPA</label>
+<input type="number" name="graduation_sgpa" class="semester-input" id="1_SGPA" placeholder="New Students can leave this field empty">
+
+<label for="first_percentage">% of Marks/CGPA</label>
+<input type="number" name="graduation_cgpa" class="semester-input" id="1_CGPA"  placeholder="New Students can leave this field empty">
+
+<label for="first_board">Board Name</label>
+<input type="text" name="graduation_board" class="semester-input" id="1_board" placeholder="New Students can leave this field empty">
+
+<label for="first_subject">Subject Offered</label>
+<input type="text" name="graduation_subjects" class="semester-input" id="Subject_1" placeholder="New Students can leave this field empty">
+
+<h3><center>Semester-2</center></h3>
+
+<label for="second_year">Year of Passing - (MA/Msc/BCA/BBA/PGDCA Sem-2)</label>
+<input type="number" name="graduation_year" class="semester-input" id="ba_bcom_bsc" placeholder="New Students can leave this field empty" >
+
+<label for="second_roll_no">Roll No.</label>
+<input type="number" name="graduation_roll_no" class="semester-input" id="1_Roll_No" placeholder="New Students can leave this field empty">
+
+<label for="second_division">Division</label>
+<input type="text" name="graduation_division" class="semester-input" id="_Division" placeholder="New Students can leave this field empty">
+
+<label for="second_marks">Class Marks Obtained/SGPA</label>
+<input type="number" name="graduation_sgpa" class="semester-input" id="1_SGPA" placeholder="New Students can leave this field empty">
+
+<label for="second_percentage">% of Marks/CGPA</label>
+<input type="number" name="graduation_cgpa" class="semester-input" id="1_CGPA"  placeholder="New Students can leave this field empty">
+
+<label for="second_board">Board Name</label>
+<input type="text" name="graduation_board" class="semester-input" id="1_board" placeholder="New Students can leave this field empty">
+
+<label for="second_subject">Subject Offered</label>
+<input type="text" name="graduation_subjects" class="semester-input" id="Subject_1" placeholder="New Students can leave this field empty">
+
+<h3><center>Year/Semester - 2 ,3</center></h3>
+
+<label for="twelfth_board">Year of Passing - ( BA/Bcom/BSc Year-2 , MA/Msc/BCA/BBA Sem-3 )</label>
+<input type="number" name="graduation_year" class="semester-input" id="ba_bcom_bsc" placeholder="New Students can leave this field empty" >
+
+<label for="tenth_marks">Roll No.</label>
+<input type="number" name="graduation_roll_no" class="semester-input" id="1_Roll_No" placeholder="New Students can leave this field empty">
+
+<label for="tenth_marks">Division</label>
+<input type="text" name="graduation_division" class="semester-input" id="_Division" placeholder="New Students can leave this field empty">
+
+<label for="tenth_marks">Class Marks Obtained/SGPA</label>
+<input type="number" name="graduation_sgpa" class="semester-input" id="1_SGPA" placeholder="New Students can leave this field empty">
+
+<label for="tenth_percentage">% of Marks/CGPA</label>
+<input type="number" name="graduation_cgpa" class="semester-input" id="1_CGPA"  placeholder="New Students can leave this field empty">
+
+<label for="tenth_board">Board Name</label>
+<input type="text" name="graduation_board" class="semester-input" id="1_board" placeholder="New Students can leave this field empty">
+
+<label for="tenth_board">Subject Offered</label>
+<input type="text" name="graduation_subjects" class="semester-input" id="Subject_1" placeholder="New Students can leave this field empty">
+
+<h3><center>Semester - 4</center></h3>
+
+<label for="forth_board">Year of Passing - (MA/Msc/BCA/BBA Sem-4 )</label>
+<input type="number" name="graduation_year" class="semester-input" id="forth_board" placeholder="New Students can leave this field empty" >
+
+<label for="forth_marks">Roll No.</label>
+<input type="number" name="graduation" class="semester-input" id="1_Roll_No" placeholder="New Students can leave this field empty">
+
+<label for="forth_marks">Division</label>
+<input type="text" name="graduation" class="semester-input" id="_Division" placeholder="New Students can leave this field empty">
+
+<label for="forth_marks">Class Marks Obtained/SGPA</label>
+<input type="number" name="graduation" class="semester-input" id="1_SGPA" placeholder="New Students can leave this field empty">
+
+<label for="forth_percentage">% of Marks/CGPA</label>
+<input type="number" name="graduation" class="semester-input" id="1_CGPA"  placeholder="New Students can leave this field empty">
+
+<label for="forth_board">Board Name</label>
+<input type="text" name="graduation" class="semester-input" id="1_board" placeholder="New Students can leave this field empty">
+
+<label for="forth_board">Subject Offered</label>
+<input type="text" name="graduation" class="semester-input" id="Subject_1" placeholder="New Students can leave this field empty">
+
+<h3><center>Year/Semester - 3,5</center></h3>
+
+<label for="forth_board">Year of Passing - ( BA/Bcom/BSc Year-3 , BCA/BBA Sem-5 )</label>
+<input type="number" name="graduation_year" class="semester-input" id="ba_bcom_bsc" placeholder="New Students can leave this field empty" >
+
+<label for="forth_marks">Roll No.</label>
+<input type="number" name="graduation_roll_no" class="semester-input" id="1_Roll_No" placeholder="New Students can leave this field empty">
+
+<label for="forth_marks">Division</label>
+<input type="text" name="graduation_division" class="semester-input" id="_Division" placeholder="New Students can leave this field empty">
+
+<label for="forth_marks">Class Marks Obtained/SGPA</label>
+<input type="number" name="graduation_sgpa" class="semester-input" id="1_SGPA" placeholder="New Students can leave this field empty">
+
+<label for="forth_percentage">% of Marks/CGPA</label>
+<input type="number" name="graduation_cgpa" class="semester-input" id="1_CGPA"  placeholder="New Students can leave this field empty">
+
+<label for="tenth_board">Board Name</label>
+<input type="text" name="graduation_board" class="semester-input" id="1_board" placeholder="New Students can leave this field empty">
+
+<label for="tenth_board">Subject Offered</label>
+<input type="text" name="graduation_subjects" class="semester-input" id="Subject_1" placeholder="New Students can leave this field empty">
+
+<h3><center>Semester-6</center></h3>
+<label for="twelfth_board">Year of Passing - (BCA/BBA Sem-6 )</label>
+<input type="number" name="graduation_year" class="semester-input" id="ba_bcom_bsc" placeholder="New Students can leave this field empty" >
+
+<label for="tenth_marks">Roll No.</label>
+<input type="number" name="graduation_roll_no" class="semester-input" id="1_Roll_No" placeholder="New Students can leave this field empty">
+
+<label for="tenth_marks">Division</label>
+<input type="text" name="graduation_division" class="semester-input" id="_Division" placeholder="New Students can leave this field empty">
+
+<label for="tenth_marks">Class Marks Obtained/SGPA</label>
+<input type="number" name="graduation_sgpa" class="semester-input" id="1_SGPA" placeholder="New Students can leave this field empty">
+
+<label for="tenth_percentage">% of Marks/CGPA</label>
+<input type="number" name="graduation_cgpa" class="semester-input" id="1_CGPA"  placeholder="New Students can leave this field empty">
+
+<label for="tenth_board">Board Name</label>
+<input type="text" name="graduation_board" class="semester-input" id="1_board" placeholder="New Students can leave this field empty">
+
+<label for="tenth_board">Subject Offered</label>
+<input type="text" name="graduation_subjects" class="semester-input" id="Subject_1" placeholder="New Students can leave this field empty">
+
+
+    <!-- Declarations -->
+    <h2>DECLARATION BY THE APPLICANT</h2>
+<p>
+  I,  
+  S/o/D/o  solemnly declare that:
+</p>
+
+<ul>
+  <li>(a) I shall be regular, punctual and will complete the required number of lectures, tutorials, practicals, and sessional work etc., i.e., 75% of the delivered lectures, failing which I shall not be eligible to take the annual examination.</li>
+  <li>(b) I shall appear in midterm/class tests regularly and will complete all assignments allotted to me.</li>
+  <li>(c) I shall not indulge in any anti-social activity and act of indiscipline bringing bad name to the institution & family.</li>
+  <li>(d) I shall be personally responsible to abide by and maintain rules and regulations of the institution.</li>
+  <li>(e) I accept as a condition of my admission the authority of the Principal, to require that I withdraw my name from college rolls if in their opinion my stay in college is harmful to the institution. In such a case my name may be struck off the college rolls.</li>
+  <li>(f) I understand that the Principal has the power of detaining students either before or at the time of the University Examination if in their judgement the college and university requirements are not fulfilled.</li>
+  <li>(g) I further declare that the entries in the application form made by me are correct to the best of my knowledge. If any entry is found incorrect, my admission may be cancelled.</li>
+</ul>
+
+
+
+
+
+
+<h2>UNDERTAKING REGARDING RAGGING</h2>
+
+<p>
+  I hereby give an undertaking that I shall neither indulge myself nor instigate any other student in ragging or create nuisance to the academic atmosphere of the institution.
+</p>
+
+<p>
+  I, the parent/guardian of 
+   declare that I am aware of the law regarding ragging and agree to abide by the punishment meted out to my ward in case he/she is found guilty of it.
+</p>
+
+
+
+
+<h2>FOR THE USE OF ADMISSION COMMITTEE</h2>
+
+<p>
+  Certified that all the particulars mentioned in the form and other documents have been checked carefully from the original certificates and these are found correct.
+</p>
+
+<p><strong>The applicant is recommended for regular/provisional admission</strong></p>
+
+<table>
+  <tr>
+    <td>
+      <label>Signature and date<br>
+        <input type="text" name="admission_committee_1" placeholder="Member of Admission Committee" style="margin-top: .3125rem; margin-bottom: .9375rem; width: 13.75rem;" >
+      </label>
+    </td>
+    <td>
+      <label>Signature and date<br>
+        <input type="text" name="admission_committee_2" placeholder="Member of Admission Committee" style="margin-top: .3125rem; margin-bottom: .9375rem; width: 13.75rem;" >
+      </label>
+    </td>
+    <td>
+      <label>Signature and date<br>
+        <input type="text" name="admission_convener" placeholder="Convener, Admission Committee" style="margin-top: .3125rem; margin-bottom: .9375rem; width: 13.75rem;" >
+      </label>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>FOR THE USE OF PRINCIPAL</h2>
+
+<p>
+  Admission Granted:
+  <h3>Regular</h3>
+  <h3>Provisional</h3>
+  <h3>Casual</h3>
+</p>
+ 
+<p style="text-align:right;">
+  <strong>Principal</strong><br>
+  <span>G.C. Indora</span>
+</p>
+
+   <button  type="submit" >Click here to fill the P.T.A form</button>
+</form>
+
+ <script> 
+
+
+ function toggledropdown() {
+  const list = document.getElementById("checkboxList");
+  list.style.display = list.style.display === "block" ? "none" : "block";
+}
+
+  function previewphoto(event , previewId) {
+    const file = event.target.files[0];
+    const preview = document.getElementById(previewId);
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.src = e.target.result;
+        preview.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+
+const subjectData = {
+  ba: {
+    ba1: ["CE - English", "Hindi", "Sanskrit", "History", "Economics"],
+    ba2: ["CE - English-2", "Economics of Rural Development", "Human Geography", "Karyalaya Hindi", "Practical"],
+    ba3: ["Soft Skills", "Indian Economy", "Disaster Management", "Stress and Time Management", "Linear Algebra"]
+  },
+  bcom: {
+    bcom1: ["Financial Accounting", "Business Organisation", "Business Law", "Business Mathematics and Statistics", "English"],
+    bcom2: ["English-2", "Company Law", "Income Tax Law and Practice", "Computer Application in Business", "Cost Accounting"],
+    bcom3: ["Human Resource", "Corporate Governance and Auditing", "Entrepreneurship", "Management Accounting", "International Business"]
+  },
+  bsc: {
+    bsc1: ["Chemical Kinetics", "Mechanics", "Animal Diversity", "Plant Ecology and Taxonomy", "Differential Equations"],
+    bsc2: ["Basic Analytical Chemistry", "Waves and Optics Theory", "Apiculture", "Biofertilizers", "Algebra"],
+    bsc3: ["Chemical Technology and Society", "Radiation Safety", "Immunology", "Medicinal Botany", "Complex Analysis"]
+  },
+  bca: {
+    bca1: ["Mathematics-1", "English", "C Programming", "Computer Fundamentals", "Automation Tools"],
+    bca2: ["Mathematics-2", "Communicative English", "Digital Electronics", "Data Structures", "DBMS"],
+    bca3: ["Mathematics-3", "Business Communication", "Computer Organization", "Desktop Publication", "OOP'S C++"],
+    bca4: ["Personnel Management", "Accounting", "System Analysis", "Web Technology", "Programming in Visual Basic"],
+    bca5: ["Operating System", "Management Information System", "E-Commerce", "ASP.net", "Computer Oriented Statistical Methods"],
+    bca6: ["Cloud Computing", "Android Programming", "Software Engineering", "Major Project", "Computer Graphics"]
+  },
+  bba: {
+    bba1: ["Business Communication", "Principles of Management", "Business Organization", "Financial Accounting", "Managerial Accounting"],
+    bba2: ["Environmental Sciences", "Organizational Behavior", "Business Mathematics", "Corporate Accounting", "Business Laws"],
+    bba3: ["Financial Management", "Human Resource Management", "Marketing Management", "Business Statistics", "Management Information System"],
+    bba4: ["Cost Accounting", "Consumer Behavior", "Universal Human Values", "Production and Operations Management", "Income Tax"],
+    bba5: ["Company Law", "Business Environment", "Management of Financial System", "Accounting For Managerial Decision", "Indirect Tax"],
+    bba6: ["Strategic Management", "Sales and Advertising", "E-Commerce", "Team Building", "Banking and Insurance Services"]
+  },
+  pgdca: {
+    pgdca1: ["Mathematics-1", "English", "C Programming", "Computer Fundamentals", "Automation Tools"],
+    pgdca2: ["System Analysis and Design", "DBMS", "Data Structures", "OOP'S C++", "Project Work"]
+  },
+  msc: {
+    msc1: ["Real Analysis-1", "Advanced Algebra-1", "Ordinary Differential Equations", "Operations Research-1", "Fluid Dynamics"],
+    msc2: ["Real Analysis-2", "Advanced Algebra-2", "Partial Differential", "Classical Mechanics", "Solid Mechanics"],
+    msc3: ["Complex Analysis-1", "Topology", "Analytic Number Theory", "Operations Research-2", "Mathematical Statistics"],
+    msc4: ["Complex Analysis-2", "Functional Analysis", "Advanced Discrete Mathematics", "Differential Geometry", "Magneto Fluid Dynamics"]
+  }
+};
+
+ function addSubject(subject) {
+  const checkboxList = document.getElementById('checkboxList');
+  const newSubject = document.createElement('div');
+  newSubject.innerHTML = `
+    <label>
+      <input type="checkbox" name="subjects[]" value="${subject}">
+      ${subject}
+    </label>
+  `;
+  checkboxList.appendChild(newSubject);
+}
+
+// This runs after the page has fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search); // Get URL parameters
+  const id = params.get("id"); // Get ?id= from URL (e.g., ?id=ba1)
+  const checkboxList = document.getElementById("checkboxList");
+
+  if (id) {
+    // Look through each course category (ba, bcom, bsc, etc.)
+    for (let category in subjectData) {
+      // If this course + semester/year (e.g., ba1) exists in that category
+      if (subjectData[category][id]) {
+        const subjects = subjectData[category][id];
+        // Add each subject to the DOM using our function
+        subjects.forEach(subject => {
+          addSubject(subject);
+        });
+        return; // Exit loop once matched
+      }
+    }
+  }
+
+  // If no subjects found for the given ID
+  checkboxList.innerHTML = "<p style='color:red; padding: .625rem;'>No subjects found for the selected course.</p>";
+});
+
+
+    
+    
+       
+</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    /* border: 2px solid black; */
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000;
+    margin-bottom:10;
+}
+.Sign-up-name{
+    /* border :2px solid black; */
+    height: 75px;
+    width: 260px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    color:yellow;
+    background-color: #000;
+    /* margin-right: 300px; */
+}
+.log-sign{
+    /* border: 2px solid black; */
+    height:75px;
+    width: 230px;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+
+}
+#sign-log{
+    background-color:yellow;
+    color:black;
+    font-size:medium;
+    width:70px;
+}
+#sign-log:hover{
+          background-color: black;
+          color:yellow;
+}
+#initial-text{
+    background-color: white;
+    margin-bottom: 10px;
+    font-size: 40px;
+    background: linear-gradient(to right ,red, blue);
+    color: transparent;
+    -webkit-background-clip: text;
+    
+}
+.image{
+    height: 620px;
+    width: 100%;
+    /* border: 2px solid black; */
+    
+}
+h3 {
+    color: #000;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin: 5px 0;
+    text-align: center;
+}
+a {
+    display: inline-block;
+    padding: 10px;
+    background-color: black;
+    color: yellow;
+    text-decoration: none;
+    border-radius: 5px;
+}
+a:hover {
+    background-color: yellow;
+    color: black;
+    transition: 0.2s ease;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #ffffff67;
+    /* box-shadow: 4px 6px 10px #000000f0 inset ; */
+    width: 100%;
+    height: 630px;
+    /* border-radius: 10px; */
+    backdrop-filter:blur(4px);
+}
+
+.group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin: auto;
+}
+
+.course-section {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.notice {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.form-container {
+    height: 622px;
+    width: 100%;
+    position: absolute;
+    top: 122px;
+}
+
+
+
+/* login */
+#login-text{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: xx-large;
+}
+.login-container {
+    background: white;
+    width: 100%;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     box-shadow: 4px 6px 10   px #000000f0 inset ;
+}
+#form-login{
+    height: 360px;
+    width: 400px;
+    /* border:2px solid black; */
+     box-shadow: 5px 5px 60px , inset -5px -5px 60px;
+     border-radius: 8px;
+}
+
+.login-container input {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* box-shadow: 4px 6px 10   px #000000f0 inset ; */
+    
+}
+.login-container button {
+    width: 250px;
+    padding: 10px;
+    background-color: black;
+    color: yellow;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: medium;
+    
+}
+.login-container button:hover {
+    background-color: yellow;
+    color: black;
+    transition: 0.2s ease-out;
+}
+
+#instagram{
+
+    position: fixed;
+    bottom: 6px;
+    right: 70px;
+
+}
+
+#insta{
+
+    position: fixed;
+    bottom: 5px;
+    right: 20px;
+    mix-blend-mode: color-burn;
+    height: 50px;
+    width: 50px;
+
+}

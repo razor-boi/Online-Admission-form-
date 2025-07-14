@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Links</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  {{>base}}
+
+  <h1 id="initial-text"><center>Online Admission Form!</center></h1>
+
+  <div class="image">
+    <img src="bingwallpaper.jpg" style="height: 620px; width: 100%;" alt="Scenery">
+  </div>
+
+  <div class="form-container">
+    <form>
+      <div class="group">
+        <!-- BA Section -->
+        <div class="course-section">
+          <h3>BA</h3>
+          <ul>
+            <li><a onclick="goToForm(this.id, event)" id="ba1" href="/form">1st Year</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="ba2" href="/form">2nd Year</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="ba3" href="/form">3rd Year</a></li>
+          </ul>
+        </div>
+
+        <!-- BCom Section -->
+        <div class="course-section">
+          <h3>BCom</h3>
+          <ul>
+            <li><a onclick="goToForm(this.id, event)" id="bcom1" href="/form">1st Year</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bcom2" href="/form">2nd Year</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bcom3" href="/form">3rd Year</a></li>
+          </ul>
+        </div>
+
+        <!-- BSc Section -->
+        <div class="course-section">
+          <h3>BSc</h3>
+          <ul>
+            <li><a onclick="goToForm(this.id, event)" id="bsc1" href="/form">1st Year</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bsc2" href="/form">2nd Year</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bsc3" href="/form">3rd Year</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="notice">Not in the above courses? Don't worry, check out BCA, BBA, MCA, and PGDCA below!</p>
+
+      <div class="group">
+        <!-- BCA -->
+        <div class="course-section">
+          <h3>BCA</h3>
+          <ul>
+            <li><a onclick="goToForm(this.id, event)" id="bca1" href="/form">1st Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bca2" href="/form">2nd Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bca3" href="/form">3rd Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bca4" href="/form">4th Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bca5" href="/form">5th Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bca6" href="/form">6th Sem</a></li>
+          </ul>
+        </div>
+
+        <!-- BBA -->
+        <div class="course-section">
+          <h3>BBA</h3>
+          <ul>
+            <li><a onclick="goToForm(this.id, event)" id="bba1" href="/form">1st Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bba2" href="/form">2nd Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bba3" href="/form">3rd Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bba4" href="/form">4th Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bba5" href="/form">5th Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="bba6" href="/form">6th Sem</a></li>
+          </ul>
+        </div>
+
+        <!-- MCA -->
+        <div class="course-section">
+          <h3>MSc</h3>
+          <ul>
+            <li><a id="msc1" href="/form" onclick="goToForm(this.id, event)" >1st Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="msc2" href="/form">2nd Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="msc3" href="/form">3rd Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="msc4" href="/form">4th Sem</a></li>
+          </ul>
+        </div>
+
+        <!-- PGDCA -->
+        <div class="course-section">
+          <h3>PGDCA</h3>
+          <ul>
+            <li><a onclick="goToForm(this.id, event)" id="pgdca1" href="/form">1st Sem</a></li>
+            <li><a onclick="goToForm(this.id, event)" id="pgdca2" href="/form">2nd Sem</a></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+
+    <h3 id="instagram" >Follow sunandan_dhiman_13 and himanshu on </h3>
+    <img src="instagram.jpeg" alt="instagram_LOGO" id="insta">
+  </div>
+ 
+  
+</body>
+<script>
+  function goToForm(id, event) {
+    event.preventDefault();
+    console.log("Clicked ID:", id);
+    window.location.href = `/form?id=${id}`;
+  }
+</script>
+</html>

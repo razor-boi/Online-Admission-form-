@@ -1,0 +1,100 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      max-width: 750px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      
+    }
+    textarea{
+    max-width: 100%;
+    max-height: 150px;
+    min-width: 100%;
+    min-height: 150px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .checkbox-group {
+      margin-top: 10px;
+    }
+    #subject-container label {
+      display: block;
+      margin-top: 10px;
+      font-weight: normal;
+    }
+
+    .custom-multiselect {
+      position: relative;
+      width: 100%;
+      margin-top: 10px;
+    }
+    .select-box {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .select-box .arrow {
+      float: right;
+    }
+    .checkbox-list {
+      display: none;
+      border: 1px solid #ccc;
+      border-top: none;
+      max-height: 200px;
+      overflow-y: auto;
+      background: white;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      border-radius: 0 0 5px 5px;
+    }
+    .checkbox-list label {
+      display: block;
+      padding: 8px;
+      cursor: pointer;
+    }
+    .checkbox-list label:hover {
+      background-color: #f0f0f0;
+    }
+    
+  

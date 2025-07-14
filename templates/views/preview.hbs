@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Previewing page</title>
+  <link rel="stylesheet" href="css/preview.css">
+</head>
+<body>
+  <!-- HEADER -->
+  {{#each students}}
+  <form action="/submit-form" method="post">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 20px; border-bottom: 2px solid #000;">
+
+  <!-- Left: Student Photo -->
+   <div style="flex: 0 0 auto; text-align: right;">
+    <label for="sr_no" style="font-weight: bold;">Sr No</label><br>
+    <input type="text" id="sr_no" name="sr_no" value="{{serial_number}}" style="width: 120px; padding: 5px; margin-top: 5px;">
+  </div>
+
+  <!-- Center: College Logo + Heading -->
+  <div style="flex-grow: 1; text-align: center;">
+    <img src="LOGO-1.png" alt="College Logo" style="height: 90px; width: 90px; display: block; margin: 0 auto 10px;">
+    <h2 style="margin: 5px 0;">GOVT. COLLEGE INDORA (H.P.)</h2>
+    <h3 style="margin: 5px 0;">APPLICATION FORM FOR ........... SESSION ()</h3>
+  </div>
+
+  <!-- Right: Sr No -->
+ 
+
+  <div style="flex: 0 0 auto;">
+    <img src="{{passport_photo}}" alt="Student Photo" style="height: 160px; width: 130px;  border: 1px solid #000;" >
+  </div>
+
+</div>
+
+<div class="flex-row">
+  <div>
+    <label for="roll_number">Roll Number</label>
+    <input type="text" name="roll_number" id="roll_number" placeholder="Enter roll number if assigned" value="{{roll_number}}" />
+  </div>
+  <div>
+    <label for="university_roll">University Roll Number</label>
+    <input type="text" name="university_roll" id="university_roll" placeholder="Enter university roll number if assigned" value="{{university_roll}}" />
+  </div>
+  <div>
+    <label for="university_reg">University Registration Number</label>
+    <input type="text" name="university_reg" id="university_reg" value="{{university_reg}}" />
+  </div>
+</div>
+
+    </div>
+
+    <!-- Course Section -->
+    <div class="section">
+      <h2>Course Information</h2>
+      <label for="course">Selected Course</label>
+      <input type="text" id="subjects" value="{{course}} ">
+            
+    </div>
+
+<div class="section">
+  <h2>Personal Information</h2>
+  <div style="display: flex; gap: 20px; align-items: flex-start;">
+
+    <!-- Left Column: Signature Box -->
+    <div style="flex: 0 0 140px; display: flex; flex-direction: column; justify-content: flex-end; height: 100%;">
+      <div style="height: 160px; width: 130px; border: 1px solid #000; margin-top: auto;">
+        <!-- This will be filled via JS with signature image -->
+        <img id="signaturePreview" src="/{{signature_photo}}" alt="Signature" style="width: 100%; height: 100%; object-fit: fill;">
+      </div>
+      <label style="text-align: center; font-size: 14px;">Signature</label>
+    </div>
+
+    <!-- Right Section: Fields -->
+    <div style="flex-grow: 1;">
+      <div class="flex-row">
+        <div class="flex-col">
+          <label>Student Full Name</label>
+          <input type="text" name="student_name" value="{{student_name}}" >
+        </div>
+        <div class="flex-col">
+          <label>Father's Name</label>
+          <input type="text" name="father_name" value="{{father_name}}" >
+        </div>
+        <div class="flex-col">
+          <label>Mother's Name</label>
+          <input type="text" name="mother_name" value="{{mother_name}}" >
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="flex-col">
+          <label>Phone Number</label>
+          <input type="tel" name="student_phone" value="{{student_phone}}" >
+        </div>
+        <div class="flex-col">
+          <label>Email</label>
+          <input type="email" name="email" value="{{email}}" >
+        </div>
+        <div class="flex-col">
+          <label>DOB</label>
+          <input type="date" name="dob" value="{{formatDate dob}}" >
+        </div>
+      </div>
+
+      <div class="flex-row">
+        <div class="flex-col">
+          <label>Aadhaar</label>
+          <input type="text" name="aadhaar" value="{{aadhaar}}" >
+        </div>
+        <div class="flex-col">
+          <label>Blood Group</label>
+          <input type="text" name="blood_group" value="{{blood_group}}" >
+        </div>
+        <div class="flex-col">
+          <label>Category</label>
+         
+          <input type="text" name="category" id="category" value="{{category}}" />
+          <label for="sub_category">Sub-Category</label>
+          <input type="text" name="category" id="category" value="{{sub_category}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Bank Details -->
+  <div class="bank-details">
+  <h3>Bank Account Details</h3>
+
+  <div class="form-row">
+    <!-- Bank Name -->
+    <div class="form-group">
+      <label for="bank_name">Bank Name</label>
+      <input type="text" name="bank_name" id="bank_name"  value="{{bank_name}}"/>
+    </div>
+
+    <!-- Account Number -->
+    <div class="form-group">
+      <label for="account_no">Bank Account Number</label>
+      <input type="text" name="account_no" id="account_no" value="{{account_no}}" />
+    </div>
+
+    <!-- IFSC Code -->
+    <div class="form-group">
+      <label for="ifsc">IFSC Code</label>
+      <input type="text" name="ifsc" id="ifsc" value="{{ifsc}}" />
+    </div>
+  </div>
+</div>
+
+    <!-- Addresses -->
+    <div class="address-section">
+  <div class="address-block">
+    <label for="correspondence_address">Correspondence Address</label>
+    <textarea name="correspondence_address" id="correspondence_address" rows="3" >{{correspondence_address}}</textarea>
+  </div>
+
+  <div class="address-block">
+    <label for="permanent_address">Permanent Address</label>
+    <textarea name="permanent_address" id="permanent_address" rows="3" >{{permanent_address}}</textarea>
+  </div>
+</div>
+
+  <label for="subjects">Selected Subjects</label>
+  <input type="text" name="subjects" id="subjects" value="{{subjects}}" />
+
+   <div class="exam-table-section">
+        <h3>Educational Qualification Details</h3>
+        <table class="exam-table">
+          <thead>
+            <tr>
+              <th>Exam Passed</th>
+              <th>Year & Month of Passing</th>
+              <th>Roll No</th>
+              <th>Division</th>
+              <th>Mark Obtained/SGPA</th>
+              <th>% of Marks/CGPA</th>
+              <th>School/College Board</th>
+              <th>Subjects Offered </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Matriculation</td>
+              <td><input type="text" name="y_m_10" value="{{matriculation.year}}"  /></td>
+              <td><input type="text" name="roll_10" value="{{matriculation.roll_no}}"   /></td>
+              <td><input type="text" name="division_10" value="{{matriculation.division}}"   /></td>
+              <td><input type="text" name="m_10" value="{{matriculation.sgpa}}"   /></td>
+              <td><input type="text" name="of_10" value="{{matriculation.cgpa}}"   /></td>
+              <td><input type="text" name="b_10" value="{{matriculation.board}}"   /></td>
+              <td><input type="text" name="subject_10" value="{{matriculation.subjects}}"   /></td>
+            </tr>
+            <tr>
+              <td>10+2</td>
+              {{#each twelfth}}
+              <td><input type="text" name="y_m_12"  value="{{year}}" /></td>
+              <td><input type="text" name="roll_12"  value="{{roll_no}}" /></td>
+              <td><input type="text" name="division_12" value="{{division}}"  /></td>
+              <td><input type="text" name="m_12" value="{{sgpa}}"  /></td>
+              <td><input type="text" name="of_12" value="{{cgpa}}"  /></td>
+              <td><input type="text" name="b_12"  value="{{board}}" /></td>
+              <td><input type="text" name="subject_12" value="{{subjects}}"  /></td>
+            {{/each}}
+            </tr>
+            {{#each graduationDetails}}
+           
+            <tr>
+              <td>BA/BSc/BCom Year 1 <br>MA/MSc Sem 1 <br> BCA/BBA/PGDCA Sem 1</td>
+              <td><input type="text" name="y_m_ba1"  value="{{year}}" /></td>
+              <td><input type="text" name="roll_ba1"  value="{{roll_no}}" /></td>
+              <td><input type="text" name="division_ba1"  value="{{division}}" /></td>
+              <td><input type="text" name="m_ba1"  value="{{sgpa}}" /></td>
+              <td><input type="text" name="of_ba1"  value="{{cgpa}}" /></td>
+              <td><input type="text" name="b_ba1"  value="{{board}}" /></td>
+              <td><input type="text" name="subject_ba1" value="{{subjects}}"  /></td>
+            </tr>
+
+            <td>MA/MSc Sem 2 <br> BCA/BBA/PGDCA Sem 2</td>
+            <td><input type="text" name="y_m_ba1" value="{{year}}" /></td>
+            <td><input type="text" name="roll_ba1"  value="{{roll_ba1}}" /></td>
+            <td><input type="text" name="division_ba1" value="{{division}}"  /></td>
+            <td><input type="text" name="m_ba1" value="{{sgpa}}"  /></td>
+            <td><input type="text" name="of_ba1"  value="{{cgpa}}" /></td>
+            <td><input type="text" name="b_ba1" value="{{board}}"  /></td>
+            <td><input type="text" name="subject_ba1" value="{{subjects}}" /></td>
+          </tr>
+
+            <tr>
+              <td>BA/BSc/BCom Year 2 <br>MA/MSc Sem 3 <br> BCA/BBA Sem 3</td>
+              <td><input type="text" name="y_m_ba2"   /></td>
+              <td><input type="text" name="roll_ba2"   /></td>
+              <td><input type="text" name="division_ba2"   /></td>
+              <td><input type="text" name="m_ba2"   /></td>
+              <td><input type="text" name="of_ba2"   /></td>
+              <td><input type="text" name="b_ba2"   /></td>
+              <td><input type="text" name="subject_ba2"   /></td>
+            </tr>
+
+            <td>MA/MSc Sem 4 <br> BCA/BBA Sem 4</td>
+            <td><input type="text" name="y_m_ba1"   /></td>
+            <td><input type="text" name="roll_ba1"   /></td>
+            <td><input type="text" name="division_ba1" /></td>
+            <td><input type="text" name="m_ba1"   /></td>
+            <td><input type="text" name="of_ba1"   /></td>
+            <td><input type="text" name="b_ba1"   /></td>
+            <td><input type="text" name="subject_ba1"   /></td>
+          </tr>
+
+            <tr>
+              <td>BA/BSc/BCom Year 3<br> BCA/BBA Sem 5</td>
+              <td><input type="text" name="y_m_ba3"  /></td>
+              <td><input type="text" name="roll_ba3"   /></td>
+              <td><input type="text" name="division_ba3"   /></td>
+              <td><input type="text" name="m_ba3"   /></td>
+              <td><input type="text" name="of_ba3"   /></td>
+              <td><input type="text" name="b_ba3"   /></td>
+              <td><input type="text" name="subject_ba3"   /></td>
+            </tr>
+            <tr>
+                <td>BCA/BBA Sem 6</td>
+                <td><input type="text" name="y_m_ba3"   /></td>
+                <td><input type="text" name="roll_ba3"   /></td>
+                <td><input type="text" name="division_ba3"   /></td>
+                <td><input type="text" name="m_ba3"   /></td>
+                <td><input type="text" name="of_ba3"   /></td>
+                <td><input type="text" name="b_ba3"   /></td>
+                <td><input type="text" name="subject_ba3"   /></td>
+              </tr>
+              {{/each}}
+          </tbody>
+        </table>
+      </div>
+
+   <!-- Declarations -->
+    <h2>DECLARATION BY THE APPLICANT</h2>
+<p>
+  I, son/daughter of , solemnly declare that:
+  S/o/D/o  solemnly declare that:
+</p>
+
+<ul>
+  <li>(a) I shall be regular, punctual and will complete the required number of lectures, tutorials, practicals, and sessional work etc., i.e., 75% of the delivered lectures, failing which I shall not be eligible to take the annual examination.</li>
+  <li>(b) I shall appear in midterm/class tests regularly and will complete all assignments allotted to me.</li>
+  <li>(c) I shall not indulge in any anti-social activity and act of indiscipline bringing bad name to the institution & family.</li>
+  <li>(d) I shall be personally responsible to abide by and maintain rules and regulations of the institution.</li>
+  <li>(e) I accept as a condition of my admission the authority of the Principal, to require that I withdraw my name from college rolls if in their opinion my stay in college is harmful to the institution. In such a case my name may be struck off the college rolls.</li>
+  <li>(f) I understand that the Principal has the power of detaining students either before or at the time of the University Examination if in their judgement the college and university requirements are not fulfilled.</li>
+  <li>(g) I further declare that the entries in the application form made by me are correct to the best of my knowledge. If any entry is found incorrect, my admission may be cancelled.</li>
+</ul>
+
+
+
+
+
+
+<h2>UNDERTAKING REGARDING RAGGING</h2>
+
+<p>
+  I hereby give an undertaking that I shall neither indulge myself nor instigate any other student in ragging or create nuisance to the academic atmosphere of the institution.
+</p>
+
+<p>
+  I, the parent/guardian of 
+   declare that I am aware of the law regarding ragging and agree to abide by the punishment meted out to my ward in case he/she is found guilty of it.
+</p>
+
+
+
+
+
+<h2>FOR THE USE OF ADMISSION COMMITTEE</h2>
+
+<p>
+  Certified that all the particulars mentioned in the form and other documents have been checked carefully from the original certificates and these are found correct.
+</p>
+
+<p><strong>The applicant is recommended for regular/provisional admission</strong></p>
+
+<table>
+  <tr>
+   
+    <td>
+    
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h2>FOR THE USE OF PRINCIPAL</h2>
+
+<p>
+  Admission Granted:
+  <h3>Regular</h3>
+  <h3>Provisional</h3>
+  <h3>Casual</h3>
+</p>
+
+<p style="text-align:right;">
+  <strong>Principal</strong><br>
+  <span>G.C. Indora</span>
+</p>
+  </form>
+  <button onclick="window.print()">Download</button>
+</body>
+
+<script>
+
+  setTimeout(() => {
+    
+
+    window.onafterprint = function() {
+        window.location.href = "./pta";
+    };
+}, 1000); // Slight delay to allow page render before print
+// Adjust the delay as needed (in milliseconds)
+</script>
+</html>
+{{/each}}
