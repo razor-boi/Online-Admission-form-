@@ -1,3 +1,4 @@
+require("dotenv").config(); // Load environment variables from .env file
 const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 8000
@@ -70,8 +71,8 @@ app.get('/3year', (req, res) => {
 });
 
 
-app.get('/index', (req, res) => {
-    res.render("index");
+app.get('/', (req, res) => {
+    res.render("");
 });
 
 app.get('/login', (req, res) => {
